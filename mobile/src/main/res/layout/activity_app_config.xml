@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.chernowii.playmote.AppConfig">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The webserver must be running on the computer, go to http://github.com/KonradIT/PlayMote to download it and configure it. There is an .exe file for Windows that you just download and run. There is also a Python program for Mac/Linux.\n\nEnter the IP Address of the host computer, shown by IPv4 Address in the IP Address box, and type the port in the Port textbox. The terminal should display a text saying &quot;Running on http://0.0.0.0:XXXX&quot;, write down those four numbers in the Port box below. Then tap on start button, and open the app in your android wear watch."
+        android:id="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView2"
+        android:hint="IP Address"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/radioButton" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:checked="false"
+        android:visibility="invisible" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:hint="Host number"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/radioButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="START"
+        android:id="@+id/button"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make sure your phone is connected to the same WiFi network as the computer!"
+        android:id="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connected to: "
+        android:id="@+id/textView4"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WiFi"
+        android:id="@+id/wifi"
+        android:layout_below="@+id/textView5"
+        android:layout_toEndOf="@+id/textView4" />
+</RelativeLayout>
