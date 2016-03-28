@@ -34,10 +34,8 @@ public class CommandListener extends WearableListenerService {
     public static final String PREFS_NAME = "Preferences";
     public static final String ipsetting = "ip_address";
     public static final String portsetting = "ip_port";
-    public static final String toastMessage = "toast_phone";
     public String IPADDRESS = "";
     String Port = "";
-    String toastStatus = "";
     @Override
     public void onMessageReceived(MessageEvent messageEvent) {
         SharedPreferences settings;
@@ -55,12 +53,17 @@ public class CommandListener extends WearableListenerService {
         }
 
         if (messageEvent.getPath().equals(volup)) {
-            new HttpAsyncTask().execute("http://" + IPADDRESS + ":" + Port + "/voluo");
+            new HttpAsyncTask().execute("http://" + IPADDRESS + ":" + Port + "/volup");
 
         }
 
         if (messageEvent.getPath().equals(voldown)) {
             new HttpAsyncTask().execute("http://" + IPADDRESS + ":" + Port + "/voldown");
+
+        }
+
+        if (messageEvent.getPath().equals(playpause)) {
+            new HttpAsyncTask().execute("http://" + IPADDRESS + ":" + Port + "/playpause");
 
         }
 
@@ -122,15 +125,7 @@ public class CommandListener extends WearableListenerService {
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-            SharedPreferences settings;
-            settings = getApplicationContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE); //1
-            toastStatus = settings.getString(toastMessage, null);
-            if (toastStatus != null) {
-                if (toastStatus.equals("true")){
-                    Toast.makeText(getBaseContext(), "Command sent!", Toast.LENGTH_SHORT).show();
-                }
 
-            }
             ;
         }
     }
