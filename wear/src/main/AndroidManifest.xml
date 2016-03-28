@@ -3,7 +3,8 @@
     package="com.chernowii.playmote">
 
     <uses-feature android:name="android.hardware.type.watch" />
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <uses-library android:name="com.google.android.wearable"
+            android:required="false" />
+
     </application>
 
 </manifest>

@@ -151,7 +151,7 @@ public class PlayMoteWear extends WearableActivity implements GoogleApiClient.Co
         voldown.setVisibility(View.VISIBLE);
         playpause.setVisibility(View.VISIBLE);
 
-        AmbientText.setVisibility(View.VISIBLE);
+        AmbientText.setVisibility(View.GONE);
     }
     @Override
     protected void onStart() {
